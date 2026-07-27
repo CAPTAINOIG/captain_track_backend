@@ -27,10 +27,16 @@ const deleteActivity = asyncHandler(async (req, res) => {
   ResponseHandler.success(res, null, 'Activity deleted successfully');
 });
 
+const getActivityStats = asyncHandler(async (req, res) => {
+  const stats = await ActivityService.getActivityStats(req.user._id);
+  ResponseHandler.success(res, stats, 'Activity statistics retrieved successfully');
+});
+
 module.exports = {
   createActivity,
   getActivities,
   getActivity,
   updateActivity,
-  deleteActivity
+  deleteActivity,
+  getActivityStats
 };

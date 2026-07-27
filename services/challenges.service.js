@@ -1,0 +1,1 @@
+const Challenges = require('../models/challenges.model')

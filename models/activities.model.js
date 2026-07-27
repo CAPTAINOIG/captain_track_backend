@@ -13,7 +13,7 @@ const activitySchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
-    enum: ['Run', 'Walk', 'Cycle', 'Swim'] // Add more types as needed
+    enum: ['Run', 'Walk', 'Cycle', 'Swim'] 
   },
   distance: {
     type: Number,

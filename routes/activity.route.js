@@ -4,7 +4,8 @@ const {
   getActivities,
   getActivity,
   updateActivity,
-  deleteActivity
+  deleteActivity,
+  getActivityStats
 } = require('../controllers/activity.controller');
 const auth = require('../middleware/auth.middleware');
 const router = express.Router();
@@ -12,6 +13,7 @@ const router = express.Router();
 router.use(auth);
 
 router.post('/activities', createActivity);
+router.get('/activities/stats', getActivityStats);
 router.get('/activities', getActivities);
 router.get('/activities/:id', getActivity);
 router.put('/activities/:id', updateActivity);
