@@ -6,6 +6,15 @@ const activitySchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  title: {
+    type: String,
+    required: true,
+    default: 'Morning Run'
+  },
+  description: {
+    type: String,
+    default: ''
+  },
   date: {
     type: Date,
     required: true

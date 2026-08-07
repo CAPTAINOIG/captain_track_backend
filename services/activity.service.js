@@ -44,7 +44,6 @@ class ActivityService {
 
   async getActivityStats(userId) {
     const activities = await Activity.find({ userId }).sort({ date: -1 });
-    
     if (!activities || activities.length === 0) {
       return {
         totalDistance: 0,

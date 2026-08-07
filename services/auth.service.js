@@ -71,9 +71,6 @@ class AuthService {
 
   async uploadPicture(userId, base64Image) {
     try {
-      console.log('uploadPicture - Starting upload for userId:', userId);
-      console.log('uploadPicture - base64Image length:', base64Image ? base64Image.length : 'undefined');
-      
       const uploadResult = await cloudinary.uploader.upload(base64Image, {
         folder: "profiles",
         transformation: [
@@ -81,9 +78,7 @@ class AuthService {
           { quality: "auto" },
         ],
       });
-      
-      console.log('uploadPicture - Cloudinary upload successful:', uploadResult.secure_url);
-      
+      // console.log('uploadPicture - Cloudinary upload successful:', uploadResult.secure_url);
       const user = await User.findByIdAndUpdate(
         userId,
         { profilePicture: uploadResult.secure_url },
@@ -95,7 +90,6 @@ class AuthService {
       }
       return user;
     } catch (error) {
-      console.error('uploadPicture - Error:', error);
       throw error;
     }
   }

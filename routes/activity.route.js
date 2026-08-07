@@ -17,6 +17,6 @@ router.get('/activities/stats', getActivityStats);
 router.get('/activities', getActivities);
 router.get('/activities/:id', getActivity);
 router.put('/activities/:id', updateActivity);
-router.delete('/:id', deleteActivity);
+router.delete('/activities/:id', deleteActivity);
 
 module.exports = router;
