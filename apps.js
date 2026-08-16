@@ -11,6 +11,7 @@ const logger = require('./utils/logger');
 // Routes
 const userRouter = require('./routes/user.route');
 const activityRouter = require('./routes/activity.route');
+const challengeRouter = require('./routes/challenges.route')
 
 // Initialize Express app
 const app = express();
@@ -71,6 +72,7 @@ app.get('/', (req, res) => {
 // API routes
 app.use('/api', userRouter);
 app.use('/api', activityRouter);
+app.use('/api', challengeRouter);
 
 // 404 handler
 app.use((req, res) => {
